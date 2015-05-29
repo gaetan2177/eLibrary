@@ -10,6 +10,7 @@ class ReadingListsController < ApplicationController
   # GET /reading_lists/1
   # GET /reading_lists/1.json
   def show
+    @articles = @reading_list.articles
   end
 
   # GET /reading_lists/new
@@ -19,6 +20,7 @@ class ReadingListsController < ApplicationController
 
   # GET /reading_lists/1/edit
   def edit
+    @articles = Article.all - @reading_list.articles
   end
 
   # POST /reading_lists
