@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529135539) do
+ActiveRecord::Schema.define(version: 20150529135722) do
+
+  create_table "article_reading_lists", force: :cascade do |t|
+    t.integer  "article_id"
+    t.integer  "reading_list_id"
+    t.string   "state"
+    t.boolean  "active"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "article_reading_lists", ["article_id"], name: "index_article_reading_lists_on_article_id"
+  add_index "article_reading_lists", ["reading_list_id"], name: "index_article_reading_lists_on_reading_list_id"
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
