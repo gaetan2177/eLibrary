@@ -1,0 +1,2 @@
+module ArticleReadingListsHelper
+end
